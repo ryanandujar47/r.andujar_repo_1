@@ -63,7 +63,7 @@ Question #1:
 Compare m1 and m2 above. Both were built from 1:9 with nrow = 3, ncol = 3, but they look different.
 Explain exactly what byrow = TRUE changes about how R fills a matrix.
 
-
+Answer Q1: R by default fills the matrix by first filling one element on each row on one entire column, then proceeds to the next column if all rows of that column are filled; byrow changes it so R will first fill an element on each column in one row, then proceeds to the next row should every column of that row are filled.
 
 
 Question #2
@@ -71,17 +71,21 @@ Question #2
 If you tried matrix(1:8, nrow = 3, ncol = 3) (only 8 numbers for 9 slots), what do you think would happen?
 Test it and explain the result, including any warning message.
 
+Answer Q2: The code still runs, but gives a warning. Then after the last number, it will go back to its first number to fill the remaining empty matrix. 
+
 
 __________PART B — Subsetting Matrices
 ```{r}
 # Using scores from Part A:
 
 # TODO: Access the single value in row 1, column 2 using scores[1, 2]
+scores[1, 2]
 
 # TODO: Access the entire first row using scores[1, ]
+scores[1, ]
 
 # TODO: Access the entire "Ben" column using scores[, "Ben"]
-
+scores[, "Ben"]
 
 ```
 
@@ -89,7 +93,7 @@ __________PART B — Subsetting Matrices
 # TODO: Return only the values in scores that are greater than or equal
 # to 90 (hint: scores[scores >= 90] -- note the result loses its shape)
 
-
+scores[scores >= 90]
 ```
 
 
@@ -98,21 +102,37 @@ Question #3
 scores[1, ] and scores[, "Ben"] both return a result, but one represents a row and the other a column.
 Run class() on each result. What data structure does R “downgrade” a single row/column of a matrix to, and why do you think R does this automatically?
 
+Answer Q3: R will return a vector, since the elements present on each one belongs to a single row or column.
+
+```{r}
+class(scores[1, ])
+class(scores[, "Ben"])
+
+```
 
 
 Question #4
 
 In the matrix-logical chunk, the row/column names disappeared from your result. * Why does subsetting with a logical condition (scores >= 90) lose the 2D shape and names thatscores[1, ] kept?
 
+Answer Q4: Logical indexing selects elements instead of rows and columns. 
+```{r}
+
+```
 
 
 __________PART C — Matrix Properties and Operations
 ```{r}
 # TODO: Use dim(), nrow(), and ncol() on scores to report its dimensions
-
+dim(scores)
+nrow(scores)
+ncol(scores)
 
 # TODO: Use t() to transpose scores and store it as scores_t
+scores_t <- t(scores)
 # Print scores_t and compare its dimensions to scores using dim()
+scores_t
+dim(scores_t)
 ```
 
 ```{r}
@@ -120,8 +140,10 @@ a <- matrix(1:4, nrow = 2)
 b <- matrix(5:8, nrow = 2)
 
 # TODO: Add a and b element-wise (a + b)
-# TODO: Multiply a and b element-wise (a * b)
+a + b
 
+# TODO: Multiply a and b element-wise (a * b)
+a * b
 
 ```
 
@@ -129,7 +151,7 @@ b <- matrix(5:8, nrow = 2)
 # TODO: Perform true matrix multiplication of a and b using %*%
 # Compare this result to a * b above -- they should be different
 
-
+a %*% b
 ```
 
 
@@ -152,7 +174,8 @@ __________PART D — cbind() and rbind()
 # Use cbind() to add a new column to scores called Dex with
 # these two values. Store the result as scores_v2 and print it.
 
-
+scores_v2 <- cbind(scores, Dex = c(85, 91))
+scores_v2
 ```
 
 ```{r}
@@ -161,7 +184,8 @@ __________PART D — cbind() and rbind()
 # Use rbind() to add this as a new row to scores. Store as scores_v3
 # and print it.
 
-
+scores_v3 <- rbind(scores, Quiz3 = c(80, 88, 93))
+scores_v3
 ```
 
 
@@ -181,22 +205,24 @@ __________PART E — Arrays: Creating and Subsetting
 # array(1:12, dim = c(2, 3, 2))
 # Print arr and observe how it displays as two separate 2x3 "slices"
 
-
+arr <- array(1:12, dim = c(2, 3, 2))
+arr
 ```
 
 ```{r}
 # TODO: Access the element in row 1, column 2, of the SECOND layer
 # (slice) of arr, e.g. arr[1, 2, 2]
+arr[1, 2, 2]
 
 # TODO: Access the entire first layer (slice) of arr using arr[ , , 1]
-
+arr[ , , 1]
 
 ```
 
 ```{r}
 # TODO: Use dim() on arr to confirm its dimensions
 
-
+dim(arr)
 ```
 
 Question #9

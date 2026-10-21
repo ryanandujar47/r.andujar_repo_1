@@ -37,7 +37,10 @@ __________PART A — Creating Data Frames
 # age (numeric): 20, 21, 19, 22, 20
 # passed (logical): TRUE, TRUE, FALSE, TRUE, FALSE
 
-
+name <- c("Ana", "Ben", "Cid", "Dex", "Eli")
+age <- c(20, 21, 19, 22, 20)
+passed <- c(TRUE, TRUE, FALSE, TRUE, FALSE)  
+  
 ```
 
 ```{r}
@@ -45,14 +48,16 @@ __________PART A — Creating Data Frames
 # using data.frame(name = name, age = age, passed = passed)
 # Print students
 
-
+students <- data.frame(name = name, age = age, passed = passed)
+students
 ```
 
 ```{r}
 # TODO: Check the type of the "name" column using typeof(students$name)
 # and class(students$name)
 
-
+typeof(students$name)
+class(students$name)
 ```
 
 ```{r}
@@ -62,7 +67,11 @@ __________PART A — Creating Data Frames
 # units = c(3, 3, 2)
 # instructor = c("Dr. P. Reyes", "Dr. R. Santos", "Dr. S. Cruz")
 
-
+courses <- data.frame(
+  course_code = c("IS101", "IS102", "IS103"),
+  units = c(3, 3, 2),
+  instructor = c("Dr. P. Reyes", "Dr. R. Santos", "Dr. S. Cruz")
+)
 ```
 
 Question #1
@@ -87,16 +96,19 @@ __________PART B — Subsetting Data Frames
 # students[["age"]]
 # students["age"]  -- note: compare the output/class of this one to the others
 
-
+students$age
+students[["age"]]
+students["age"]
 ```
 
 ```{r}
 #TODO: Access the entire 2nd row of students using students[2, ]
+students[2, ]
 ```
 
 ```{r}
 # TODO: Access the value in row 3, column "name" using students[3, "name"]
-
+students[3, "name"]
 
 ```
 
@@ -104,14 +116,14 @@ __________PART B — Subsetting Data Frames
 # TODO: Return only the rows of students where passed is TRUE
 # Hint: students[students$passed == TRUE, ]
 
-
+students[students$passed == TRUE, ]
 ```
 
 ```{r}
 # TODO: Return only the rows of students where passed is TRUE AND
 # age is greater than 19. Use the & operator to combine both conditions.
 
-
+students[students$passed == TRUE & students$age > 19, ]
 ```
 
 Question #3
@@ -131,25 +143,24 @@ __________PART C — Data Frame Properties
 ```{r}
 # TODO: Use str() on students to see the structure and types of each column
 
-
+str(students)
 ```
 
 ```{r}
 # TODO: Use dim(), nrow(), and ncol() on students to report its size
-
-
+dim(students)
+nrow(students)
+ncol(students)
 ```
 
 ```{r}
 # TODO: Use names() (or colnames()) to list the column names of students
-
-
+names(students)
 ```
 
 ```{r}
 # TODO: Use summary() on students to get summary statistics for each column
-
-
+summary(students)
 ```
 
 Question #5
@@ -170,25 +181,25 @@ __________PART D — Data Frame Operations
 ```{r}
 # TODO: Add a new column called year_level to students with values:
 # 2, 3, 1, 4, 2  (one per student, in the same order as the rows)
-
-
+students <- cbind(students, year_level = c(2, 3, 1, 4, 2))
 ```
 
 ```{r}
 # TODO: Remove the "passed" column from students by setting it to NULL
 # students$passed <- NULL
+students$passed <- NULL
 ```
 
 ```{r}
 # TODO: Sort students by age in ascending order using order()
 # Hint: students[order(students$age), ]
-
-
+students[order(students$age), ]
 ```
 
 ```{r}
 # TODO: Sort students by age in DESCENDING order
 # Hint: use order(students$age, decreasing = TRUE), or order(-students$age)
+order(-students$age)
 ```
 
 Question #7
@@ -215,16 +226,14 @@ grades <- data.frame(
 
 # TODO: Add a new column "average" to grades that holds the mean of
 # midterm and final for each student. Hint: (grades$midterm + grades$final) / 2
-
-
+grades$average <- (grades$midterm + grades$final) / 2
 ```
 
 ```{r}
 # TODO: Print only the rows of grades where remarks is "Failed",
 # showing just the name and average columns.
 # Hint: grades[grades$remarks == "Failed", c("name", "average")]
-
-
+grades[grades$remarks == "Failed", c("name", "average")]
 ```
 
 Question #9
