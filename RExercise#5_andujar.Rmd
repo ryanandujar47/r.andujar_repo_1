@@ -165,7 +165,7 @@ Question #6
 t(scores) swaps rows and columns. Look at dim(scores) versus dim(scores_t).
 Why must the row/column names also swap positions when you transpose a matrix?
 
-Answer Q6: 
+Answer Q6: Because the row/column names must be matched with their respective values, so that values in the matrix will not be associated with the wrong names should the matrix be transposed.
 
 
 __________PART D — cbind() and rbind()
@@ -191,12 +191,35 @@ scores_v3
 
 Question #7 * What would happen if you tried cbind(scores, c(85, 91, 100)) — giving 3 values for a matrix that only has 2 rows? * Test it, read the warning/error, and explain why cbind() and rbind()) require matching dimensions.
 
+Answer Q7: Based on my testing, the third value (100) does not show up, only 85 and 91 in their respective positions. So, this is one of the reasons that cbind() and rbind() must have matching dimensions, to prevent any data from missing.
+
+```{r}
+cbind(scores, c(85, 91, 100))
+```
 
 
 Question #8
 
 In what situation would you use rbind() instead of cbind() when updating a dataset over time?
 Give a concrete example (e.g., daily sales, weekly attendance) and explain your reasoning.
+
+Answer Q8: Suppose I want to track my daily sales with only two columns Date and Sales. I should use rbind() to add a new day of sales; using cbind() will cause the new day of sales to be added as a column for the existing rows. 
+
+```{r}
+sales <- data.frame(
+  Date = c("Oct 21", "Oct 22"),
+  Sales = c(2000, 1500)
+)
+
+new_sales <- data.frame(
+  Date = "Oct 23",
+  Sales = 2500
+)
+
+sales <- rbind(sales, new_sales)
+
+sales
+```
 
 
 __________PART E — Arrays: Creating and Subsetting
@@ -230,6 +253,7 @@ Question #9
 A matrix needs 2 indices (scores[row, col]) but an array needs 3 (arr[row, col, layer]).
 Using dim(arr), explain in your own words what each of the three numbers represents.
 
+Answer Q9: The first number in an array represents the rows, the second number represents the column, while the third one represents the layer, which has its own set of rows and columns for each layer.
 
 
 Question #10
@@ -237,6 +261,8 @@ Question #10
 Give a real-world example of data that would naturally fit a 3D array structure (hint: think of something that has rows, columns, AND a third repeating dimension like time, subjects, or categories).
 
 Explain why a single 2D matrix would not be enough.
+
+Answer Q10: One of the examples of using a 3D array is to use it for a company that tracks the sales of several products across multiple stores over several months. The rows will represent the products; columns for stores; while the layers represent months. A 2D matrix might not be enough to account for the products of each stores in each month. 2D matrix makes months difficult to implement, which will make the matrix less organized.
 
 
 __________PART F — Critical Thinking Challenge
@@ -250,6 +276,7 @@ class_b <- matrix(c(88, 84, 95, 91), nrow = 2, byrow = TRUE,
 # using the correct bind function (think about whether these represent
 # new STUDENTS or new SCORE COLUMNS before choosing cbind or rbind)
 
+all_students <- rbind(class_a, class_b)
 
 ```
 
@@ -257,7 +284,7 @@ class_b <- matrix(c(88, 84, 95, 91), nrow = 2, byrow = TRUE,
 # TODO: From all_students, compute each student's average score across
 # Midterm and Final. Hint: rowMeans(all_students) does this in one line.
 
-
+rowMeans(all_students)
 ```
 
 Question #11
@@ -265,7 +292,7 @@ Question #11
 Explain WHY you chose cbind() or rbind() in challenge-1.
 What clue in the data (shared row names vs. shared column names) told you which function was correct?
 
-
+Answer Q11: The clue is that class_a and class_b have the same columns, but have different students, which are represented by rows.
 
 
 Question #12
@@ -273,7 +300,11 @@ Question #12
 Suppose instead of 2 classes you had 5 classes, each recorded as a separate matrix with the same 2 columns (Midterm, Final).
 Describe, in plain language (no code required), how you would combine all 5 into a single matrix, and how you would check your final result is correct using dim().
 
+Answer Q12: I would use rbind() to combine the five matrices vertically because they all have the same two columns. Each class adds two new students, that results in ten students. Then, I will use dim(all_students) to confirm that the combined matrix has 10 rows and 2 columns.
+
 
 Conclusion
 In 3–4 sentences, summarize the key differences between a matrix and an array, and describe a situation where cbind()/rbind() would be useful in a real dataset you might work with.
+
+Matrix only contains rows and columns, while an array can contain multiple dimensions that can contain multiple different kinds of data. Both cbind() and rbind() are useful should you need to add more data in a dataset. Checking whether to use cbind() or rbind() to combine data will depend on its structure.
 
