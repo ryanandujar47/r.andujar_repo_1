@@ -80,7 +80,7 @@ You created students two different ways in concept: first from separate vectors,
 Both approaches produce the same kind of object.
 In your own words, explain why data.frame() requires every column argument to have the same length, and what error you would expect if they didn’t.
 
-
+Answer Q1: 
 
 
 Question #2
@@ -88,6 +88,7 @@ Question #2
 A data frame is often described as “a list of vectors of equal length.”
 Based on what you know about lists from a previous lab, explain why this description makes sense — specifically, why can each column hold a different data type while a single column cannot?
 
+Answer Q2:
 
 __________PART B — Subsetting Data Frames
 ```{r}
@@ -131,6 +132,7 @@ Question #3
 students["age"] and students$age both seem to give you the age column, but class() reveals they are different types of objects.
 Run class() on each and explain the difference, connecting it to what you learned about single vs. double brackets on lists in a previous lab.
 
+Answer Q3:
 
 
 Question #4
@@ -138,6 +140,7 @@ Question #4
 In df-multiple-conditions, explain what the & operator is doing to the two logical vectors (students$passed == TRUE and students$age > 19) before that combined result is used to filter rows.
 What would change if you used | (OR) instead of & (AND)?
 
+Answer Q4:
 
 __________PART C — Data Frame Properties
 ```{r}
@@ -168,13 +171,15 @@ Question #5
 Run summary() on students. Notice that the numeric column (age) and the logical column (passed) are summarized very differently from the character column (name).
 Describe what kind of summary R produces for each of the three data types, and explain why a “mean” wouldn’t make sense for the name column.
 
-
+Answer Q5:
 
 
 Question #6
 
 str() and summary() both describe a data frame, but they show different information.
 Based on what you observed, when would str() be more useful to you than summary(), and vice versa?
+
+Answer Q6:
 
 
 __________PART D — Data Frame Operations
@@ -207,13 +212,15 @@ Question #7
 After removing the passed column, could you still run the filter from df-logical-filter (students$passed == TRUE)?
 Explain what happens and why keeping track of a data frame’s current structure matters as you apply a sequence of operations to it.
 
-
+Answer Q7:
 
 
 Question #8
 
 order() does not sort the data frame directly — it returns a vector of row positions.
 Explain, step by step, how students[order(students$age), ] uses that position vector to reorder the whole data frame (all columns, not just age).
+
+Answer Q8:
 
 
 __________PART E — Critical Thinking Challenge
@@ -240,6 +247,8 @@ Question #9
 
 Suppose your instructor wants to know: “Which factor seems more responsible for a student’s final remark — a big drop between midterm and final, or a consistently low midterm score?”
 Using only the tools from this lab (subsetting, new columns, sorting), describe — in plain language, code optional — the steps you would take with grades to start investigating that question.
+
+Answer Q9:
 
 
 Conclusion
