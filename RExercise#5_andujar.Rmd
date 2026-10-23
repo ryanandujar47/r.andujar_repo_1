@@ -113,12 +113,9 @@ class(scores[, "Ben"])
 
 Question #4
 
-In the matrix-logical chunk, the row/column names disappeared from your result. * Why does subsetting with a logical condition (scores >= 90) lose the 2D shape and names thatscores[1, ] kept?
+In the matrix-logical chunk, the row/column names disappeared from your result. * Why does subsetting with a logical condition (scores >= 90) lose the 2D shape and names that scores[1, ] kept?
 
-Answer Q4: Logical indexing selects elements instead of rows and columns. 
-```{r}
-
-```
+Answer Q4: Logical indexing selects elements instead of rows and columns. It just returns the values of the element that satisfies the condition, while scores[1, ] kept the names since the names are associated with the values from scores[1, ].
 
 
 __________PART C — Matrix Properties and Operations
@@ -160,12 +157,15 @@ Question #5
 a * b and a %*% b both “multiply” the same two matrices but give different results.
 Explain the difference between element-wise multiplication and matrix multiplication in your own words.
 
+Answer Q5: element-wise multiplication multiplies elements in the same positions, while matrix multiplication multiplies rows of a by columns of b.
 
 
 Question #6
 
 t(scores) swaps rows and columns. Look at dim(scores) versus dim(scores_t).
 Why must the row/column names also swap positions when you transpose a matrix?
+
+Answer Q6: 
 
 
 __________PART D — cbind() and rbind()
