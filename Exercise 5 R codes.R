@@ -44,6 +44,38 @@ a %*% b
 # End of PART C
 
 # PART D
+scores_v2 <- cbind(scores, Dex = c(85, 91))
+scores_v2
 
+scores_v3 <- rbind(scores, Quiz3 = c(80, 88, 93))
+scores_v3
 
 # End of PART D 
+
+# PART E 
+arr <- array(1:12, dim = c(2, 3, 2))
+arr
+
+arr[1, 2, 2]
+arr[ , , 1]
+
+dim(arr)
+
+# End of PART E
+
+# PART F
+class_a <- matrix(c(85, 90, 78, 92), nrow = 2, byrow = TRUE,
+                  dimnames = list(c("S1", "S2"), c("Midterm", "Final")))
+class_b <- matrix(c(88, 84, 95, 91), nrow = 2, byrow = TRUE,
+                  dimnames = list(c("S3", "S4"), c("Midterm", "Final")))
+
+all_students <- rbind(class_a, class_b)
+all_students
+
+#student_averages <- rowMeans(all_students)
+#student_averages
+
+rowMeans(all_students)
+
+
+# End of PART F
