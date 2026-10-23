@@ -1,0 +1,159 @@
+---
+title: "RExercise#4_andujar"
+author: "Ryan A. Andujar"
+date: "2026-10-16"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+******* PART A — Creating Vectors and List:
+```{r}
+#Question #1:
+
+#A factory has a census of its workers. There are 50 workers in total. The following list shows their ages: `34, 28, 22, 36, 27, 18, 52, 39, 42, 29, 35, 31, 27, 22, 37, 34, 19, 20, 57, 49, 50, 37, 46, 25, 17, 37, 43, 53, 41, 51, 35, 24,33, 41, 53, 40, 18, 44, 38, 41, 48, 27, 39, 19, 30, 61, 54, 58, 26, 18.
+
+#Create a vector for the worker’s age.
+
+worker_age <- c(
+  34, 28, 22, 36, 27, 18, 52, 39, 42, 29,
+  35, 31, 27, 22, 37, 34, 19, 20, 57, 49,
+  50, 37, 46, 25, 17, 37, 43, 53, 41, 51,
+  35, 24, 33, 41, 53, 40, 18, 44, 38, 41,
+  48, 27, 39, 19, 30, 61, 54, 58, 26, 18
+)
+
+
+#How many data points?
+
+length(worker_age)
+
+
+#Find the minimum and the maximum value of worker’s age.
+
+min(worker_age)
+max(worker_age)
+
+
+#Access the 13rd to 18th elements and 33th to 35th elements of worker’s Age.
+
+worker_age[13:18]
+worker_age[33:35]
+
+
+#Access all but the 10th, 20th, 30th and 40th elements are not included.
+
+worker_age[-c(10, 20, 30, 40)]
+
+
+#f: Modify the 4th, 14th, 24th, and 44th elements with value = 0.
+
+worker_age[c(4, 14, 24, 44)] <- 0
+```
+
+```{r}
+#Question #2:
+
+#R has actually lots of built-in datasets.
+#For example, the rivers data “gives the lengths (in miles) of 141 “major” rivers in North America, as compiled by the US Geological Survey”.
+#Use data(rivers)
+#Get the number of elements (length) in rivers, their sum (sum), mean (mean), median(median), variance(var), standard deviation(sd), minimum (min) and maximum (max).
+
+data(rivers)
+
+length(rivers)  
+sum(rivers)     
+mean(rivers)    
+median(rivers)  
+var(rivers)     
+sd(rivers)      
+min(rivers)     
+max(rivers)     
+
+
+#What is the result? The derived result must be in just one(1) vector name.
+
+#[1] 141
+#[1] 83357
+#[1] 591.1844
+#[1] 425
+#[1] 243908.4
+#[1] 493.8708
+#[1] 135
+#[1] 3710
+```
+
+```{r}
+#Question #3:
+
+#The table below gives the 25 most powerful celebrities and their annual pay as ranked by the editions of Forbes magazine and as listed on the Forbes.com website.
+
+#Forbes Ranking
+#Create vectors according to the above table.
+
+
+#Modify the power ranking and pay of J.K. Rowling. Change power ranking to 15 and pay to 90.
+
+
+```
+
+```{r}
+#Question #4:
+
+#Create a list of ten (10) vegetables you ate during your lifetime. If none, just list down the vegetables in your mind.
+
+vegetables <- list(
+  "Carrot", "Broccoli", "Cabbage", "Spinach", "Potato",
+  "Eggplant", "Squash", "Cucumber", "Cauliflower", "Okra"
+)
+
+print(vegetables)
+
+#Add 2 additional vegetables after the last vegetables in the list. What is the result?
+
+vegetables <- append(vegetables, list("Lettuce", "Radish"))
+
+#b. How many datapoints do you have?
+
+length(vegetables)
+
+#Add 4 additional vegetables after index 5. What is the result?
+
+vegetables <- append(
+  vegetables,
+  list("Peas", "Corn", "Celery", "Bell Pepper"),
+  after = 5
+)
+
+print(vegetables)
+
+
+#How many datapoints does your vegetable list have?
+
+length(vegetables)
+
+```
+
