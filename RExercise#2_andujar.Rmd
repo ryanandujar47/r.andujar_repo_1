@@ -1,0 +1,252 @@
+---
+title: "RExercise2_Andujar"
+output: html_document
+date: "2026-09-30"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+## Part A - Arithmetic Operations
+
+```{r}
+# TODO: Store 17 in a variable called a, and 5 in a variable called b
+# Then print the results of: a + b, a - b, a * b, a / b
+a <- 17
+b <- 5
+a + b 
+a - b
+a * b
+
+```
+
+```{r}
+# TODO: Using the same a and b, compute and print a %% b and a %/% b
+# a %% b = remainder of a / b
+# a %/% b = whole-number (integer) division
+a <- 17
+b <- 5
+
+a %% b
+a %/% b
+```
+
+```{r}
+# TODO: Print 2 raised to the power of 10 using the ^ operator
+2^10
+```
+
+```{r}
+#Question 1:
+#All three results calculates division, but each one displays a different output that resulted from division. "%%" displays the integer, but don't include the decimal; "%/%" displays the remainder of the division; "/" displays the actual quotient with its decimal.
+
+#Question 2:
+#Yes.
+```
+
+## Part B - Basic Data Types
+
+```{r}
+# TODO: Use typeof() to check the type of each of x, y, z, w, v
+x <- 42
+y <- 42L       
+z <- "42"
+w <- TRUE
+v <- 3 + 2i   
+
+typeof(x)
+typeof(y)
+typeof(z)
+typeof(w)
+typeof(v)
+```
+
+```{r}
+# TODO: Use class() to check the class of each of x, y, z, w, v
+x <- 42
+y <- 42L       
+z <- "42"
+w <- TRUE
+v <- 3 + 2i   
+
+class(x)
+class(y)
+class(z)
+class(w)
+class(v)
+```
+
+```{r}
+# TODO: Use mode() to check the class of each of x, y, z, w, v
+x <- 42
+y <- 42L       
+z <- "42"
+w <- TRUE
+v <- 3 + 2i   
+
+mode(x)
+mode(y)
+mode(z)
+mode(w)
+mode(v)
+```
+
+```{r}
+#Question 3: Answer
+#The use of L in the variable y converts its value into an integer. x is declared as double by default in R language.
+
+#Question #4: Answer
+#typeof() checks the data type of the variable
+#class() seems to check the values inside the variable based on its class.
+#mode() seems to check the actual values inside the variable.
+```
+
+## Part C - Type Conversion
+
+```{r}
+# TODO: Convert num_string to a numeric value using as.numeric()
+# Then check its type with typeof(), class(), and mode()
+num_string <- "123"
+as.numeric(num_string)
+
+typeof(num_string)
+class(num_string)
+mode(num_string)
+```
+
+```{r}
+# TODO: Convert the number 0 and the number 1 to logical using as.logical()
+# What do you get?
+0
+1
+as.logical(0)
+as.logical(1)
+# 0 and 1 is converted into its logical counterparts respectively.  
+```
+
+```{r}
+# TODO: Try converting bad_string to numeric using as.numeric()
+# Run this chunk and observe the warning message and the result
+bad_string <- "hello123"
+as.numeric(bad_string)
+```
+
+```{r}
+# Question 5: Answer
+#To prevent the code from becoming an error.
+#It could present an error in other parts of the code.
+
+# Question 6: Answer
+#The result is TRUE for both (2) and (-1).
+#R seems to be following a rule where '0' is always FALSE, while any number, including negative numbers results in TRUE.
+```
+
+## Part D - Strings, paste(), and paste0()
+
+```{r}
+# TODO: Print first_name and last_name using print() and/or cat()
+first_name <- "Juan"
+last_name <- "Dela Cruz"
+
+print(first_name)
+print(last_name)
+
+cat(first_name, last_name, "\n")
+```
+
+```{r}
+# TODO: Use paste() to combine first_name and last_name into a full name
+# TODO: Use paste0() to do the same, and compare the two results
+
+full_name <- paste(first_name, last_name)
+print(full_name)
+
+full_name0 <- paste0(first_name, last_name)
+print(full_name0)
+```
+
+```{r}
+# TODO: Use paste() with the argument sep = "-" to join first_name and
+# last_name with a dash instead of a space
+
+name_with_dash <- paste(first_name, last_name, sep = "-")
+print(name_with_dash)
+```
+
+```{r}
+age <- 21
+# TODO: Use paste0() to build the sentence:
+# "Juan Dela Cruz is 21 years old." by combining full_name, age, and text
+
+sentence <- paste0(full_name, " is ", age, " years old.")
+print(sentence)
+```
+```{r}
+#Question #7: paste() and paste0() produced different results for the same two strings. Explain exactly why, referencing what each function does by default.
+
+
+```
+
+```{r}
+#Question #8: In the strings-numbers chunk, you combined a character string with a numeric variable (age) using paste0() without first converting age to a string.
+
+
+```
+
+## Part E - Critical Thinking Challenge
+
+```{r}
+# TODO: Predict, then test: what is the result of "5" + 5 in R?
+# Run it and read the error message carefully.
+
+
+```
+
+```{r}
+# TODO: Now fix the code above so that "5" + 5 correctly evaluates to 10
+# using an appropriate conversion function.
+
+
+```
+
+```{r}
+#Question #9: Some programming languages automatically convert "5" + 5 into 10 without an error. R does not.
+
+#Based on what you’ve learned about R’s data types in this lab, why do you think R requires an explicit conversion instead of guessing what the programmer meant?
+
+
+```
+
+```{r}
+Question #10: Suppose a classmate writes a script that reads a column of “numbers” from a text file. The column looks numeric, but when they try sum() on it, R throws an error. Based on everything in this lab (types, typeof()/class()/mode(), conversion, warnings), write a short paragraph explaining what likely went wrong and the steps you’d take to diagnose and fix it.
+
+
+```
+
+CONCLUSION
+```{r}
+
+```
+
