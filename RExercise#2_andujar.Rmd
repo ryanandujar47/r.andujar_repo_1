@@ -46,8 +46,6 @@ a * b
 # TODO: Using the same a and b, compute and print a %% b and a %/% b
 # a %% b = remainder of a / b
 # a %/% b = whole-number (integer) division
-a <- 17
-b <- 5
 
 a %% b
 a %/% b
