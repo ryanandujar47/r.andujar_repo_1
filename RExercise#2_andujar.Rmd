@@ -154,15 +154,17 @@ bad_string <- "hello123"
 as.numeric(bad_string)
 ```
 
-```{r}
-# Question 5: Answer
-#To prevent the code from becoming an error.
-#It could present an error in other parts of the code.
 
-# Question 6: Answer
-#The result is TRUE for both (2) and (-1).
+Question 5: 
+
+Answer Q5: To prevent the code from becoming an error.
+It could present an error in other parts of the code.
+
+Question 6: 
+
+Answer Q6: The result is TRUE for both (2) and (-1).
 #R seems to be following a rule where '0' is always FALSE, while any number, including negative numbers results in TRUE.
-```
+
 
 ## Part D - Strings, paste(), and paste0()
 
@@ -204,17 +206,18 @@ age <- 21
 sentence <- paste0(full_name, " is ", age, " years old.")
 print(sentence)
 ```
-```{r}
-#Question #7: paste() and paste0() produced different results for the same two strings. Explain exactly why, referencing what each function does by default.
+
+Question 7: paste() and paste0() produced different results for the same two strings. Explain exactly why, referencing what each function does by default.
+
+Answer Q7: 
 
 
-```
 
-```{r}
-#Question #8: In the strings-numbers chunk, you combined a character string with a numeric variable (age) using paste0() without first converting age to a string.
+Question 8: In the strings-numbers chunk, you combined a character string with a numeric variable (age) using paste0() without first converting age to a string.
 
 
-```
+Answer Q8: 
+
 
 ## Part E - Critical Thinking Challenge
 
@@ -232,22 +235,24 @@ print(sentence)
 
 ```
 
-```{r}
-#Question #9: Some programming languages automatically convert "5" + 5 into 10 without an error. R does not.
 
-#Based on what you’ve learned about R’s data types in this lab, why do you think R requires an explicit conversion instead of guessing what the programmer meant?
+Question 9: Some programming languages automatically convert "5" + 5 into 10 without an error. R does not.
 
-
-```
-
-```{r}
-Question #10: Suppose a classmate writes a script that reads a column of “numbers” from a text file. The column looks numeric, but when they try sum() on it, R throws an error. Based on everything in this lab (types, typeof()/class()/mode(), conversion, warnings), write a short paragraph explaining what likely went wrong and the steps you’d take to diagnose and fix it.
+Based on what you’ve learned about R’s data types in this lab, why do you think R requires an explicit conversion instead of guessing what the programmer meant?
 
 
-```
+Answer Q9: 
+
+
+Question 10: Suppose a classmate writes a script that reads a column of “numbers” from a text file. The column looks numeric, but when they try sum() on it, R throws an error. Based on everything in this lab (types, typeof()/class()/mode(), conversion, warnings), write a short paragraph explaining what likely went wrong and the steps you’d take to diagnose and fix it.
+
+
+Answer Q10: 
+
+
 
 CONCLUSION
-```{r}
 
-```
+
+
 
