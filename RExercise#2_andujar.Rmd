@@ -222,14 +222,16 @@ print(sentence)
 
 Question 7: paste() and paste0() produced different results for the same two strings. Explain exactly why, referencing what each function does by default.
 
-Answer Q7: 
+Answer Q7: paste() will print the string, while adding a space before printing the subsequent string. paste0() on the other hand will print the string, but won't add a space for the subsequent string. However, if the string has a space inside it, paste0() will still print that space.
 
 
 
-Question 8: In the strings-numbers chunk, you combined a character string with a numeric variable (age) using paste0() without first converting age to a string.
 
+Question 8: In the strings-numbers chunk, you combined a character string with a numeric variable (age) using paste0() without first converting age to a string. 
 
-Answer Q8: 
+*Did this cause an error? Explain what paste0() does internally to make this work, and how it relates to the type conversions you practiced in Part C.
+
+Answer Q8: No, it doesn't cause an error. paste0() will combine different strings into one, without adding a space after. It will also print other types of values like numeric. 
 
 
 ## Part E - Critical Thinking Challenge
