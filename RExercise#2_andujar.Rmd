@@ -176,7 +176,7 @@ Question 6: as.logical(0) and as.logical(1) convert to FALSE and TRUE.
 *Test it, then explain the rule R seems to be following.
 
 Answer Q6: The result is TRUE for both (2) and (-1).
-#R seems to be following a rule where '0' is always FALSE, while any number, including negative numbers results in TRUE.
+R seems to be following a rule where '0' is always FALSE, while any number, including negative numbers results in TRUE.
 
 
 ## Part D - Strings, paste(), and paste0()
