@@ -56,13 +56,14 @@ a %/% b
 2^10
 ```
 
-```{r}
-#Question 1:
-#All three results calculates division, but each one displays a different output that resulted from division. "%%" displays the integer, but don't include the decimal; "%/%" displays the remainder of the division; "/" displays the actual quotient with its decimal.
 
-#Question 2:
-#Yes.
-```
+Question 1:
+Answer Q1: All three results calculates division, but each one displays a different output that resulted from division. "%%" displays the integer, but don't include the decimal; "%/%" displays the remainder of the division; "/" displays the actual quotient with its decimal.
+
+Question 2:
+
+Answer Q2: Yes.
+
 
 ## Part B - Basic Data Types
 
@@ -111,15 +112,17 @@ mode(w)
 mode(v)
 ```
 
-```{r}
-#Question 3: Answer
-#The use of L in the variable y converts its value into an integer. x is declared as double by default in R language.
 
-#Question #4: Answer
-#typeof() checks the data type of the variable
-#class() seems to check the values inside the variable based on its class.
-#mode() seems to check the actual values inside the variable.
-```
+Question 3: 
+
+Answer Q3: The use of L in the variable y converts its value into an integer. x is declared as double by default in R language.
+
+Question 4: 
+
+Answer Q4: typeof() checks the data type of the variable
+class() seems to check the values inside the variable based on its class.
+mode() seems to check the actual values inside the variable.
+
 
 ## Part C - Type Conversion
 
