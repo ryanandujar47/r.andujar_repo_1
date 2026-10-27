@@ -57,10 +57,11 @@ a %/% b
 ```
 
 
-Question 1:
+Question 1: Run 17 / 5, 17 %% 5, and 17 %/% 5 side by side. In your own words, explain how these three results relate to each other mathematically.
+
 Answer Q1: All three results calculates division, but each one displays a different output that resulted from division. "%%" displays the integer, but don't include the decimal; "%/%" displays the remainder of the division; "/" displays the actual quotient with its decimal.
 
-Question 2:
+Question 2: Predict the output of 10 %% 3 and 10 %/% 3 before running the code. Were you correct? If not, explain what you misunderstood.
 
 Answer Q2: Yes.
 
@@ -113,11 +114,11 @@ mode(v)
 ```
 
 
-Question 3: 
+Question 3: x <- 42 and y <- 42L look almost identical, but typeof(x) and typeof(y) give different answers. Explain the difference in your own words.
 
 Answer Q3: The use of L in the variable y converts its value into an integer. x is declared as double by default in R language.
 
-Question 4: 
+Question 4: Is typeof() ever different from class() and from mode() for the same object? Look at your results above and explain any case where this happens (or, if you did not see one, explain what you would expect for a matrix or factor).
 
 Answer Q4: typeof() checks the data type of the variable
 class() seems to check the values inside the variable based on its class.
@@ -155,12 +156,22 @@ as.numeric(bad_string)
 ```
 
 
-Question 5: 
+Question 5: When you ran the conversion-fail chunk, R produced NA and a warning instead of stopping with an error.
+
+*Why do you think R is designed to give a warning here rather than crashing the whole script?
+
+*What are the risks of this behavior if you don’t read your warnings?
 
 Answer Q5: To prevent the code from becoming an error.
 It could present an error in other parts of the code.
 
-Question 6: 
+
+Question 6: as.logical(0) and as.logical(1) convert to FALSE and TRUE.
+
+*What do you think as.logical(2) and as.logical(-1)` will produce?
+(Your answer here)
+
+*Test it, then explain the rule R seems to be following.
 
 Answer Q6: The result is TRUE for both (2) and (-1).
 #R seems to be following a rule where '0' is always FALSE, while any number, including negative numbers results in TRUE.
