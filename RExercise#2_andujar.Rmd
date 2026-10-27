@@ -61,6 +61,7 @@ Question 1: Run 17 / 5, 17 %% 5, and 17 %/% 5 side by side. In your own words, e
 
 Answer Q1: All three results calculates division, but each one displays a different output that resulted from division. "%%" displays the integer, but don't include the decimal; "%/%" displays the remainder of the division; "/" displays the actual quotient with its decimal.
 
+
 Question 2: Predict the output of 10 %% 3 and 10 %/% 3 before running the code. Were you correct? If not, explain what you misunderstood.
 
 Answer Q2: Yes.
@@ -117,6 +118,7 @@ mode(v)
 Question 3: x <- 42 and y <- 42L look almost identical, but typeof(x) and typeof(y) give different answers. Explain the difference in your own words.
 
 Answer Q3: The use of L in the variable y converts its value into an integer. x is declared as double by default in R language.
+
 
 Question 4: Is typeof() ever different from class() and from mode() for the same object? Look at your results above and explain any case where this happens (or, if you did not see one, explain what you would expect for a matrix or factor).
 
