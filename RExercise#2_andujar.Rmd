@@ -29,7 +29,7 @@ plot(pressure)
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
 
-## Part A - Arithmetic Operations
+Part A - Arithmetic Operations
 
 ```{r}
 # TODO: Store 17 in a variable called a, and 5 in a variable called b
@@ -67,7 +67,7 @@ Question 2: Predict the output of 10 %% 3 and 10 %/% 3 before running the code. 
 Answer Q2: Yes.
 
 
-## Part B - Basic Data Types
+Part B - Basic Data Types
 
 ```{r}
 # TODO: Use typeof() to check the type of each of x, y, z, w, v
@@ -127,7 +127,7 @@ class() seems to check the values inside the variable based on its class.
 mode() seems to check the actual values inside the variable.
 
 
-## Part C - Type Conversion
+Part C - Type Conversion
 
 ```{r}
 # TODO: Convert num_string to a numeric value using as.numeric()
@@ -179,7 +179,7 @@ Answer Q6: The result is TRUE for both (2) and (-1).
 R seems to be following a rule where '0' is always FALSE, while any number, including negative numbers results in TRUE.
 
 
-## Part D - Strings, paste(), and paste0()
+Part D - Strings, paste(), and paste0()
 
 ```{r}
 # TODO: Print first_name and last_name using print() and/or cat()
@@ -234,7 +234,7 @@ Question 8: In the strings-numbers chunk, you combined a character string with a
 Answer Q8: No, it doesn't cause an error. paste0() will combine different strings into one, without adding a space after. It will also print other types of values like numeric. 
 
 
-## Part E - Critical Thinking Challenge
+Part E - Critical Thinking Challenge
 
 ```{r}
 # TODO: Predict, then test: what is the result of "5" + 5 in R?
