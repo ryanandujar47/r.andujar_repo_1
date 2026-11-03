@@ -28,7 +28,7 @@ plot(pressure)
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
- ******* PART A - Creating Vectors: c(), seq(), rep() *******
+PART A - Creating Vectors: c(), seq(), rep() 
 ```{r} 
 # TODO: Create a numeric vector called scores containing: 88, 92, 79, 95, 84
 # Then create a character vector called subjects containing:
