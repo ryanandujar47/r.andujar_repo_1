@@ -382,7 +382,15 @@ inventory$in_stock <- append(inventory$in_stock, TRUE)
 
 #Suppose a classmate stores related data as three separate, unconnected vectors (item_names, item_prices, item_stock) instead of grouping them into one list like inventory. What risks or bugs could this create as the dataset grows or gets reordered? Argue for or against using a list (or, later, a data frame) instead of separate vectors.
 
-#Answer: using separate vectors to store related data has a high risk of creating data misalignment 
+#Answer: Using separate vectors to store related data has a high risk of creating data misalignment. I will argue in favor of using a list. Using list() allows us to preserve the alignment of data should some data is missing.
 
 ```
+
+Conclusion:
+
+In 3–4 sentences, summarize the key differences between vectors and lists in R, and explain when you would choose one data structure over the other.
+
+
+
+
 
