@@ -80,7 +80,7 @@ You created students two different ways in concept: first from separate vectors,
 Both approaches produce the same kind of object.
 In your own words, explain why data.frame() requires every column argument to have the same length, and what error you would expect if they didn’t.
 
-Answer Q1: 
+Answer Q1: If data.frame we're to allow different lengths, it would cause missing values. The error that would emerge will imply a differing number of rows.
 
 
 Question #2
@@ -88,7 +88,7 @@ Question #2
 A data frame is often described as “a list of vectors of equal length.”
 Based on what you know about lists from a previous lab, explain why this description makes sense — specifically, why can each column hold a different data type while a single column cannot?
 
-Answer Q2:
+Answer Q2: Each column in a data frame will only contain one type of data. Giving one column more than one data type in a data frame will automatically convert all elements into a character data type.
 
 __________PART B — Subsetting Data Frames
 ```{r}
@@ -132,7 +132,7 @@ Question #3
 students["age"] and students$age both seem to give you the age column, but class() reveals they are different types of objects.
 Run class() on each and explain the difference, connecting it to what you learned about single vs. double brackets on lists in a previous lab.
 
-Answer Q3:
+Answer Q3: students$age returns a numeric value, while students["age"] returns the data frame in the age is part of.
 
 
 Question #4
@@ -140,7 +140,8 @@ Question #4
 In df-multiple-conditions, explain what the & operator is doing to the two logical vectors (students$passed == TRUE and students$age > 19) before that combined result is used to filter rows.
 What would change if you used | (OR) instead of & (AND)?
 
-Answer Q4:
+Answer Q4: Logical AND requires both conditions to be true, while changing it to OR only requires at least one of the conditions to be true.
+
 
 __________PART C — Data Frame Properties
 ```{r}
@@ -171,7 +172,7 @@ Question #5
 Run summary() on students. Notice that the numeric column (age) and the logical column (passed) are summarized very differently from the character column (name).
 Describe what kind of summary R produces for each of the three data types, and explain why a “mean” wouldn’t make sense for the name column.
 
-Answer Q5:
+Answer Q5: Summary for the name in involves length, class, and mode. For age, it involves min, max, 1st and 3rd Quarter, median and mean. For passed, it is mode, then the number of TRUE and FALSE. Mean is only used to calculate the average of numbers, but not letters or characters.
 
 
 Question #6
@@ -179,7 +180,7 @@ Question #6
 str() and summary() both describe a data frame, but they show different information.
 Based on what you observed, when would str() be more useful to you than summary(), and vice versa?
 
-Answer Q6:
+Answer Q6: str() would be more useful if you want to know how many variables does the data frame have and their respective elements. It also shows the exact values from each element.
 
 
 __________PART D — Data Frame Operations
@@ -213,7 +214,10 @@ Question #7
 After removing the passed column, could you still run the filter from df-logical-filter (students$passed == TRUE)?
 Explain what happens and why keeping track of a data frame’s current structure matters as you apply a sequence of operations to it.
 
-Answer Q7:
+Answer Q7: students$passed == TRUE returns logical(0). Remove the NULL, then students$passed will return all the values of passed. 
+
+The current structure will be the reference point of  operations. Changing the structure will also change the reference available for operations. Such as changing the value of a specific element, the most recent value will be accounted for operations.
+
 
 
 Question #8
@@ -221,7 +225,7 @@ Question #8
 order() does not sort the data frame directly — it returns a vector of row positions.
 Explain, step by step, how students[order(students$age), ] uses that position vector to reorder the whole data frame (all columns, not just age).
 
-Answer Q8:
+Answer Q8: order() will pick the first element as its reference, then compare it sequentially across other elements to determine the largest value, if the next element is larger than the current one, the current one gets replaced.
 
 
 __________PART E — Critical Thinking Challenge
@@ -249,8 +253,14 @@ Question #9
 Suppose your instructor wants to know: “Which factor seems more responsible for a student’s final remark — a big drop between midterm and final, or a consistently low midterm score?”
 Using only the tools from this lab (subsetting, new columns, sorting), describe — in plain language, code optional — the steps you would take with grades to start investigating that question.
 
-Answer Q9:
+Answer Q9: I can use comparison to compare the students' scores during their midterm and finals to determine how much is the difference between the two terms.
+
+Then, I will isolate students with relatively low scores using subsetting. This is to identify whether students have low scores across the two terms.
+
+Then, I will use sorting to sort students based on their scores in order. Then, I compare the results.
 
 
 Conclusion
 In 3–4 sentences, summarize what a data frame is, how it relates to vectors and lists from earlier labs, and why it is R’s primary structure for real-world tabular data.
+
+data.frame() creates a rectangular frame to organize my dataset. It requires you to have the same lengths across its columns or may also contain columns with length divisible with other columns via recycling. Data frame can contain multiple vectors that have different data types. This is used in real world in a form of students' records, surveys, datasets, etc.
