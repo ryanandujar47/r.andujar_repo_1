@@ -390,7 +390,6 @@ Conclusion:
 
 In 3–4 sentences, summarize the key differences between vectors and lists in R, and explain when you would choose one data structure over the other.
 
-
-
+The key differences between lists and vectors is that vectors stores one type of data, such as numeric data; list can store multiple data with different data types and sizes, such as a variable number containing 3 numeric elements, and variable name containing 4 character elements. I would use a vector if I only need to account for one type of data, which could be all numeric data, while I use a list should my dataset contains more than one type of data that should be grouped together.
 
 
